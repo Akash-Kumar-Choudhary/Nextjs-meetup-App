@@ -13,7 +13,7 @@ const MeetupDetails = (props) => {
   );
 };
 export async function getStaticPaths() {
-  const response = await fetch("http://localhost:5000/meetup");
+  const response = await fetch("http://localhost:8000/api/v1/meetup");
   const data = await response.json();
   return {
     fallback: false,
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 }
 export async function getStaticProps(context) {
   const meetupid = context.params.meetupId;
-  const response = await fetch("http://localhost:5000/meetup");
+  const response = await fetch("http://localhost:8000/api/v1/meetup");
   const data = await response.json();
   var result={}
   for( var i=0 ; i < data.length ; ++i){

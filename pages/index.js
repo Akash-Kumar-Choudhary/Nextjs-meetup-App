@@ -6,7 +6,7 @@ const HomePage=(props) => {
     </Fragment>
 }
 export async function getStaticProps(){
-    const response=await fetch('http://localhost:5000/meetup')
+    const response=await fetch('http://localhost:8000/api/v1/meetup')
     const data=await response.json()
     return {
         props:{
